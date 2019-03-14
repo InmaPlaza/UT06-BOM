@@ -842,6 +842,8 @@ function showProduction(){
 			div2.appendChild(publicacion);
 			div2.appendChild(synopsis);	
 			div2.appendChild(image);
+
+			
 		
 			//Si la produccion es una instancia de Movie...añadimos esas dos propiedades
 			if(produccion.value instanceof Movie){
@@ -857,22 +859,17 @@ function showProduction(){
 				div2.appendChild(localizacion);
 
 				//Añadimos el boton para ver los recursos en una nueva ventana
-				var button = document.createElement("button");
-				button.setAttribute("type","button");
-				button.setAttribute("value",produccion.value.title);
-				button.setAttribute("class","btn btn-link btn-lg btn-block");
-				button.appendChild(document.createTextNode("Ver Recurso"));
-				button.addEventListener("click",function(){abrirVentana(this.value)});
-
-				div2.appendChild(button);
 
 			}
-			else{
-				var sesion = document.createElement("p");
-				sesion.setAttribute("class","card-text");
-				sesion.appendChild(document.createTextNode("Sesión: " + produccion.value.seasons));
-				div2.appendChild(sesion);
-			}
+			
+			var button = document.createElement("button");
+			button.setAttribute("type","button");
+			button.setAttribute("value",produccion.value.title);
+			button.setAttribute("class","btn btn-link btn-lg btn-block");
+			button.appendChild(document.createTextNode("Ver Recurso"));
+			button.addEventListener("click",abrirVentana);
+
+			div2.appendChild(button);
 
 			div2.appendChild(tituloA);
 			
