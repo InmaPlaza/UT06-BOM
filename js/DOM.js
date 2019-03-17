@@ -1,7 +1,8 @@
 function initPopulate(){
 	//Creamos los objetos Person
 	var persona = new Person("Blanca","Suarez","",new Date(1990,05,10),"https://es.wikipedia.org/wiki/Blanca_Su%C3%A1rez");
-	var persona1 = new Person("Anna","Fernandez","",new Date(1990,03,04),"https://es.wikipedia.org/wiki/Ana_Fern%C3%A1ndez_Garc%C3%ADa");		var persona2 = new Person("Ana","Polvorosa","",new Date(1991,11,25),"https://es.wikipedia.org/wiki/Ana_Mar%C3%ADa_Polvorosa");
+	var persona1 = new Person("Anna","Fernandez","",new Date(1990,03,04),"https://es.wikipedia.org/wiki/Ana_Fern%C3%A1ndez_Garc%C3%ADa");		
+	var persona2 = new Person("Ana","Polvorosa","",new Date(1991,11,25),"https://es.wikipedia.org/wiki/Ana_Mar%C3%ADa_Polvorosa");
 	var persona3 = new Person("Nadia","De Santiago","",new Date(1991,01,23),"https://es.wikipedia.org/wiki/Nadia_de_Santiago");
 	var persona4 = new Person("Maggie","Civantos","",new Date(1985,09,12),"https://es.wikipedia.org/wiki/Maggie_Civantos");
 	var persona5 = new Person("Martiño","Rivas","",new Date(1985,01,10),"https://es.wikipedia.org/wiki/Marti%C3%B1o_Rivas");
@@ -842,6 +843,8 @@ function showProduction(){
 			div2.appendChild(publicacion);
 			div2.appendChild(synopsis);	
 			div2.appendChild(image);
+
+			
 		
 			//Si la produccion es una instancia de Movie...añadimos esas dos propiedades
 			if(produccion.value instanceof Movie){
@@ -857,22 +860,17 @@ function showProduction(){
 				div2.appendChild(localizacion);
 
 				//Añadimos el boton para ver los recursos en una nueva ventana
-				var button = document.createElement("button");
-				button.setAttribute("type","button");
-				button.setAttribute("value",produccion.value.title);
-				button.setAttribute("class","btn btn-link btn-lg btn-block");
-				button.appendChild(document.createTextNode("Ver Recurso"));
-				button.addEventListener("click",function(){abrirVentana(this.value)});
-
-				div2.appendChild(button);
 
 			}
-			else{
-				var sesion = document.createElement("p");
-				sesion.setAttribute("class","card-text");
-				sesion.appendChild(document.createTextNode("Sesión: " + produccion.value.seasons));
-				div2.appendChild(sesion);
-			}
+			
+			var button = document.createElement("button");
+			button.setAttribute("type","button");
+			button.setAttribute("value",produccion.value.title);
+			button.setAttribute("class","btn btn-link btn-lg btn-block");
+			button.appendChild(document.createTextNode("Ver Recurso"));
+			button.addEventListener("click",abrirVentana);
+
+			div2.appendChild(button);
 
 			div2.appendChild(tituloA);
 			
