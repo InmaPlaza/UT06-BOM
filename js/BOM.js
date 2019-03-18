@@ -4,13 +4,13 @@ function crearVentana(nombre){
 	ventanas.push(ventanaNueva);
 }
 
+
 var ventanas = [];
 
 //Abre una nueva ventana
 function abrirVentana(){
 	var index = 0;
 	var encontrada = false;
-	//Si es la primera vez que se ejecuta la funcion,se crea directamente la ventana
 	if(ventanas[0] == undefined){
 		crearVentana(this.value);
 	}else{
@@ -28,7 +28,6 @@ function abrirVentana(){
 			crearVentana(this.value);
 		}
 	}
-
 }
 
 //Cierra las ventanas abiertas
@@ -39,7 +38,7 @@ function cerrarVentanas(){
 			ventanas[index].close();	
 		}
 	}
-}
+}//FIn de cerrarVentanas
 
 //Muestra los recursos relacionados con una producción en una nueva ventana
 //Esta funcion se ejecuta al cargar la ventana

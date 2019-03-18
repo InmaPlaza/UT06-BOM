@@ -9,3 +9,6 @@ Ejercicio con ventanas (10 puntos) Obligatorio.
  - Creacion del fichero BOM.js
  - Añadir funcionalidad al fichero BOM.js
  - Creacion del fichero Recursos.html
+
+## Version 1.0.1
+ - Correccion de errores
